@@ -47,4 +47,4 @@ def randomArr(iterations):
         arr.append(random.randint(0,10000))
     return arr
 
-print(timeChecker())
+print("mergeSort ", timeChecker())

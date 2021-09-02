@@ -10,7 +10,7 @@ def bubble(l):
                 l[j]=l[j+1]
                 l[j+1]=h
     e = time.time()
-    return l,e-s
+    return e-s
 
 def randomArr(iterations):
     arr = []
@@ -18,4 +18,4 @@ def randomArr(iterations):
         arr.append(random.randint(0,1000))
     return arr
 
-print(bubble(randomArr(100000)))
+print("Bubble " , bubble(randomArr(10000)))

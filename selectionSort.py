@@ -5,5 +5,5 @@ def selectionSort(arr):
             arr[i] = arr[len(arr)-1]
             arr[len(arr)-1] = h
     return arr
-
+#bean
 print(selectionSort([5,4,3,2,1]))

@@ -1,5 +1,5 @@
-import random
 import time
+from Array_Generator import *
 e = 0
 s = 0
 def mergeSort(arr):
@@ -34,17 +34,9 @@ def merge(l,r):
          r.pop(0)
     return m
 
-def timeChecker():
+def mergeSortTester(n,arrayType):
+    a = genArr(n,arrayType)
     s = time.time()
-    sorted = mergeSort(randomArr(1000000))
+    sorted = mergeSort(a)
     e = time.time()
     return e-s
-
-
-def randomArr(iterations):
-    arr = []
-    for i in range(iterations):
-        arr.append(random.randint(0,10000))
-    return arr
-
-print("mergeSort ", timeChecker())

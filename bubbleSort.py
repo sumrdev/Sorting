@@ -1,7 +1,6 @@
 import time
-import random
+from Array_Generator import *
 def bubble(l):
-    s = time.time()
     n = len(l)
     for i in range(n-1):
         for j in range(0,n-i-1):
@@ -9,13 +8,11 @@ def bubble(l):
                 h=l[j]
                 l[j]=l[j+1]
                 l[j+1]=h
+    return l
+
+def bubbleSortTester(n,arrayType):
+    a = genArr(n,arrayType)
+    s = time.time()
+    sorted = bubble(a)
     e = time.time()
     return e-s
-
-def randomArr(iterations):
-    arr = []
-    for i in range(iterations):
-        arr.append(random.randint(0,1000))
-    return arr
-
-print("Bubble " , bubble(randomArr(10000)))

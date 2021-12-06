@@ -1,13 +1,12 @@
-import random
 import time
 import sys
-sys.setrecursionlimit(1500)
+from Array_Generator import *
+sys.setrecursionlimit(999999)
 def quickSort(s):
     length = len(s)
     if length <= 1:
         return s
-    else:
-        pivot = s.pop()
+    pivot = s.pop()
     
     g = []
     l = []
@@ -19,16 +18,11 @@ def quickSort(s):
             l.append(x)
     return quickSort(l) + [pivot] + quickSort(g)
 
-def randomArr(iterations):
-    arr = []
-    for i in range(iterations):
-        arr.append(random.randint(0,1000))
-    return arr
-
-def timeChecker():
+def quickSortTester(n, arrayType):
+    a = genArr(n,arrayType)
     s = time.time()
-    sorted = quickSort(randomArr(1000000))
+    sorted = quickSort(a)
     e = time.time()
     return e-s
 
-print("quickSort " , timeChecker())
+print(quickSortTester(100000,'few unique'))
